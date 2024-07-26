@@ -20,6 +20,14 @@ app.post('/tasks', (req, res) => {
   res.status(201).json(task);
 });
 
+// Update a task
+app.put('/tasks/:id', (req, res) => {
+  const id = req.params.id;
+  const updatedTask = req.body;
+  tasks = tasks.map(task => task.id === id ? updatedTask : task);
+  res.json(updatedTask);
+});
+
 // Delete a task
 app.delete('/tasks/:id', (req, res) => {
   const id = req.params.id;

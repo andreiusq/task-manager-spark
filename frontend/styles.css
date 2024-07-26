@@ -55,3 +55,7 @@ li button {
 li button:hover {
   background-color: #c82333;
 }
+
+.editInput {
+  width: 70%;
+}

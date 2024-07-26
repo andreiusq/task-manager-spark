@@ -11,6 +11,20 @@
     <h1>Task Manager</h1>
     <input type="text" id="taskInput" placeholder="New Task">
     <button onclick="addTask()">Add Task</button>
+    <div>
+      <label>
+        <input type="radio" name="filter" value="all" checked onchange="filterTasks(this.value)">
+        All
+      </label>
+      <label>
+        <input type="radio" name="filter" value="completed" onchange="filterTasks(this.value)">
+        Completed
+      </label>
+      <label>
+        <input type="radio" name="filter" value="pending" onchange="filterTasks(this.value)">
+        Pending
+      </label>
+    </div>
     <ul id="taskList"></ul>
   </div>
   <script src="app.js"></script>
