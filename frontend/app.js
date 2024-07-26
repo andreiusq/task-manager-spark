@@ -88,14 +88,13 @@ async function toggleEditTask(id) {
 
 // Update a task
 async function updateTask(task) {
-  const response = await fetch(`${apiUrl}/${task.id}`, {
+  await fetch(`${apiUrl}/${task.id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(task)
   });
-  const updatedTask = await response.json();
   const taskIndex = tasks.findIndex(t => t.id === task.id);
-  tasks[taskIndex] = updatedTask;
+  tasks[taskIndex] = task;
   renderTasks();
 }
 
